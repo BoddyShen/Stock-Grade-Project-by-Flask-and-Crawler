@@ -13,23 +13,14 @@ def load_user(user_id):
 
 class User(db.Document, UserMixin):
 
-    """User model
+    """User model"""
 
-    When sparse=True combined with unique=True and required=False
-    means that uniqueness won't be enforced for None values
-    """
-
-    # User editable fields
     username = db.StringField(
         required=True, unique=True, max_length=40, index=True)
 
     password_hash = db.StringField(required=False, index=True)
 
     stocks = db.ListField(required=False, index=True)
-
-    def __repr__(self):
-        """Define what is printed for the user object"""
-        return f"Username: {self.username} id: {self.id}"
 
     def check_password(self, password):
         """Checks that the pw provided hashes to the stored pw hash value"""
