@@ -1,0 +1,84 @@
+{% extends "core/base.html" %} {% block content %}
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <!-- current_user會紀錄data -->
+    <h1 class="display-4">&thinsp;&thinsp;Hello, {{current_user.username}}</h1>
+    <p class="lead">
+      &emsp;Search your stock by stock number and ending quarter of a year.
+    </p>
+    <hr class="my-4" />
+    <div class="container">
+      <form action="{{ url_for('users.crawler') }}" method="post">
+        <div class="form-group">
+          <input
+            type="test"
+            name="stock_number"
+            class="form-control"
+            placeholder="Stock's number (e.g. 2330)"
+          />
+        </div>
+        <div class="row">
+          <div class="col">
+            <input
+              type="text"
+              name="year"
+              class="form-control"
+              placeholder="Year (e.g. 2022)"
+            />
+          </div>
+          <div class="col">
+            <input
+              type="number"
+              name="quarter"
+              class="form-control"
+              placeholder="Quarters (1,2,3,4)"
+              min="1"
+              max="4"
+            />
+          </div>
+        </div>
+        <br />
+        <center>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </center>
+      </form>
+    </div>
+
+    <hr class="my-4" />
+    <form action="{{ url_for('users.test_case')}}" method="post">
+      <center>
+        <button type="submit" class="btn btn-secondary btn-sm">
+          Input Test Cases
+        </button>
+      </center>
+    </form>
+    <br />
+    <form action="{{ url_for('users.sort_stock')}}" method="post">
+      <center>
+        <button type="submit" class="btn btn-secondary btn-sm">
+          Sort by Grades
+        </button>
+      </center>
+    </form>
+    <p class="lead">&emsp;Here are your stocks.</p>
+
+    <div class="container">
+      <ul class="list-group">
+        {% for stock in current_user.stocks %}
+        <form
+          action="{{ url_for('users.delete', stock_no = stock['no'], stock_quarter = stock['date']) }}"
+          method="post"
+        >
+          <li class="list-group-item">
+            No.{{stock["no"]}}&emsp;Name:{{stock["name"]}}&emsp;Quarter:{{stock["date"]}}&emsp;ROE:{{stock["roe"]}}%
+            &emsp;Free Cashflow:{{stock["fcf"]}}億&emsp;
+            Grade:{{stock["grade"]}}&emsp;&emsp;&emsp;&emsp;
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </li>
+        </form>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock content %}
