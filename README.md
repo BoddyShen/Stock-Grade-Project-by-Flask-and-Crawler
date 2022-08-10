@@ -17,7 +17,6 @@ See the [demo](https://www.youtube.com/watch?v=bwfWWsZeR0M&ab_channel=BoddyShen)
 # Design
 ![image](https://github.com/BoddyShen/Stock-Grading-Project-by-Flask-and-Crawler/blob/e766be2ab81951a03ab5ec77d2a0630d1aa175b7/image/Stock_Grading.png)
 
-<br>
 # Frontend
 To present this project, we used elements in [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to build a simple and clean interface for users. With the help of flask-templates engine "jinja2", we can use "if-else" and "for-loop" syntax in the HTML file and have more flexibility to present different content in the same template.
 
