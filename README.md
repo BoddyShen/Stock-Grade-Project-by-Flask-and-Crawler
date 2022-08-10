@@ -10,7 +10,7 @@ To begin with, I aim to use the Profit matrix theory to evaluate stocks in Taiwa
 ![image](https://github.com/BoddyShen/Stock-Grading-Project-by-Flask-and-Crawler/blob/85e44efb85e85aa98c0621b99a5e5458a14942ae/image/stock_grade.png)<br>
 Reference: [雷浩斯價值投資網](https://redhouse.statementdog.com/archives/2178#more-2178,https://statementdog.com/explain/earningMatrix.html)<br>
 
-By using annual ROE ('股東權益報酬率')and Free Cash Flow ('營業活動之淨現金流入(出)' - '投資活動之淨現金流入(出)') as references, we can grade the stock and evalute its profitability in a certain period.
+By using annual ROE ('股東權益報酬率') and Free Cash Flow ('營業活動之淨現金流入(出)' - '投資活動之淨現金流入(出)') as references, we can grade the stock and evalute its profitability in a certain period.
 
 See the [demo](https://www.youtube.com/watch?v=bwfWWsZeR0M&ab_channel=BoddyShen).
 
