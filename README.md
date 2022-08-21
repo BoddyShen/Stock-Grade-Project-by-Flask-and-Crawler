@@ -1,5 +1,5 @@
 # Stock-Grade-Project-by-Flask-and-Crawler
-This is a Stock Grading project made up of crawler, Flask, MongoDB and Bootrap. The skills applied in this project will listed below.<br>
+This is a Stock Grading project made up of crawler, Flask, MongoDB and Boostrap. The skills applied in this project will listed below.<br>
 <br>
 Crawler: request, pandas<br>
 Flask: flask_login (LoginManager, current_user, login_required, login_user, logout_user), Blueprint, flash, redirect, render_template<br>
